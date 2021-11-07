@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="container mt-3">
+    <div class="d-flex flex-column justify-content-center">
+        {% if news %}
+
+            <h1 class="text-center"> {{ news.title }} </h1>
+            {% for paragraph in paragraphs %}
+                <div class="text-content">
+                    <p>{{ paragraph }}</p>
+                    
+                </div>
+                
+                {% if forloop.first %}
+                    <img src="{{ news.image.url }}" class="img-fluid mx-auto mb-5" alt="...">
+                {% endif %}
+            {% endfor %}
+            
+            
+            
+        {% else %}
+            <h1>Notícia não encontrada! :(</h1>
+        {% endif %}
+    </div>
+</section>
+
+
+{% endblock %}

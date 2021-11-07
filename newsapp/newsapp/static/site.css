@@ -1,0 +1,22 @@
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: 0 solid transparent;
+  color: #000000;
+  font-weight: 600;
+  color: #474747;
+} 
+
+.card-img-top {
+    height: 250px; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    object-fit: cover;
+
+}
+
+.card-body {
+    padding: 0;
+}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row"> 
+        {% if context %}
+            {% for news in context %}
+                <div class="col-sm mb-3">
+                    
+                        <div class="card border-0" style="width: 18rem;">
+                            <a href="{% url 'news' news.id %}">
+                                <img src="{{ news.image.url }}" class="card-img-top justify-content-center">
+                                <div class="card-body mt-2">
+                                    <h5 class="card-title text-start">{{news.title}}</h5>
+                                    
+                                </div>
+                            </a>
+                        </div>
+                    
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
