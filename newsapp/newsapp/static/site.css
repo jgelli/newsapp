@@ -17,6 +17,15 @@ a:focus {
 
 }
 
+.card-img-related {
+  height: 150px; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 150px;
+    object-fit: cover;
+
+}
+
 .card-body {
     padding: 0;
 }
