@@ -9,14 +9,18 @@
             <div class="d-flex flex-column col-9 border-end">
                 <div class="border-bottom justify-content-center">
                     <h1 class="text-center"> {{ news.title }} </h1>
+                    <img src="{{ news.image.url }}" class="rounded mx-auto d-block mb-5 news-img" alt="...">
                     {% for paragraph in paragraphs %}
                         <div class="text-content">
                             <p>{{ paragraph }}</p>
-                            
                         </div>
                         
                         {% if forloop.first %}
-                            <img src="{{ news.image.url }}" class="img-fluid mx-auto mb-5" alt="...">
+                            {% if ads %}
+                                <p class="text-center border-bottom fw-lighter">Publicidade</p>
+                                    <img src="{{ ads.image.url }}" class="img-fluid mx-auto my-2 border ads" alt="...">
+
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -24,7 +28,7 @@
                 <p class="fw-lighter">Author: {{ news.author }}</p>
             </div>
             <div class="d-flex flex-column col-3 text-center">
-                <a href="#" class="text-decoration-none"><h3>Mais sobre: {{ news.topic }}</h3></a>
+                <h3>Mais sobre {{ news.topic }}:</h3>
                 <div class="border-bottom justify-content-center">
                     {% if related %}
                         {% for related_news in related %}

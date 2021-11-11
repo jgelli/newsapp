@@ -6,7 +6,7 @@
     <div class="row"> 
         {% if context %}
             {% for news in context %}
-                <div class="col-sm mb-3">
+                <div class="col-sm mb-3 d-flex justify-content-center">
                     
                         <div class="card border-0" style="width: 18rem;">
                             <a href="{% url 'news' news.id %}">
@@ -20,6 +20,8 @@
                     
                 </div>
             {% endfor %}
+        {% else %}
+            <h2>Desculpa, não foi possível encontrar nenhuma notícia.<h2>
         {% endif %}
     </div>
     

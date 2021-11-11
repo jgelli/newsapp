@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load widget_tweaks %}
+
+<section class="container col-8 mt-5">
+    <h2 class="text-center mb-3">Contato</h2>
+    {% include 'partials/_alert.html' %}
+    <form action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}"> {{ field.label }} </label>
+                {{ field|add_class:'form-control mb-3' }}
+            </div>
+            {% for error in field.errors %}
+                <section class='alert alert-danger' role='alert'>
+                    {{ error }}
+                </section>
+            {% endfor %}
+        {% endfor %}
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+</section>
+
+{% endblock  %}

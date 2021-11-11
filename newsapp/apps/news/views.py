@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from news.models import News
+from ads.models import Advertising
 from django.core.paginator import Paginator
-from .functions import paragraph
+from functions import paragraph
 
 def home(request):
     news = News.objects.order_by('-published_date').all()
@@ -18,13 +19,16 @@ def home(request):
 def news(request, news_id):
 
     news = get_object_or_404(News, pk=news_id)
-    related_topic = News.objects.order_by('-published_date').filter(topic=news.topic).exclude(pk=news_id)[0:6]
+    related_topic = News.objects.order_by('?').filter(topic=news.topic).exclude(pk=news_id)[0:6]
     
+    ads = Advertising.objects.order_by('?').first()
+
     paragraphs = paragraph(news.content)
     show_news = {
         'news' : news,
         'paragraphs' : paragraphs,
-        'related' : related_topic
+        'related' : related_topic,
+        'ads' : ads
     }
 
 

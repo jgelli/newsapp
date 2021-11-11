@@ -32,10 +32,12 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = [
     'news',
+    'contact',
+    'ads'
 ]
 
 WIDGETS_APPS = [
-    
+    'widget_tweaks',
 ]
 
 

@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.base import ModelState
 from django.utils import timezone
-from .functions import path_and_rename
+from functions import path_and_rename
+
 
 class Topic(models.Model):
     """
@@ -26,4 +27,3 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
-
