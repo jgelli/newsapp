@@ -1,6 +1,7 @@
 # Newsapp
 
 This project was made in the process to apply for a job opportunity in Prestige.
+It's a news page made in Django, Python web framework, with user sign up, ads between the news' text.
 
 ## How to run project:
 1. Make virtualenv:
