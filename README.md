@@ -1,39 +1,47 @@
-## Para executar o projeto:
-1. Criar virtualenv:
+# Newsapp
+
+##This project was made in the process to apply for a job opportunity in Prestige.
+
+## How to run project:
+1. Make virtualenv:
 ```
 $ python3 -m venv env
 ```
-ou
+or
 ```
 $ virtualenv --python=python3 env
 ```
 
-2. "Entrar" na nova env:
+2. Run the new env:
 ```
 $ source env/bin/activate
 ```
-ou
+or
 ```
 $ . env/bin/activate
 ```
 
-3. Instalar dependências:
+3. Install the requirements:
 ```
 (env) $ pip install -r requirements.txt
 ```
 
-4. Rodar servidor:
+4. Run the server:
 
-é necessário entrar na paste "newsapp"
+it's must to be inside the "newsapp" folder
 ```
 (env) $ cd newsapp/
 ```
 
-depois rodar o servidor
+then run the server
 ```
 (env) $ python manage.py runserver 0.0.0.0:8000
 ```
+or just
+```
+(env) $ python manage.py runserver
+```
 
-## Acessando o site:
+## Acess the website in the url:
 
-Basta ir no navegador e digitar: localhost:8000
+localhost:8000
