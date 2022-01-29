@@ -1,6 +1,6 @@
 # Newsapp
 
-##This project was made in the process to apply for a job opportunity in Prestige.
+This project was made in the process to apply for a job opportunity in Prestige.
 
 ## How to run project:
 1. Make virtualenv:
